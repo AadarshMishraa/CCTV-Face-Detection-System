@@ -1,0 +1,42 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# Uploaded files (exclude from repo)
+uploads/*
+videos/*
+results/*
+
+# But keep the directories
+!uploads/.gitkeep
+!videos/.gitkeep
+!results/.gitkeep
+
+# Video files
+*.mp4
+*.avi
+*.mov
+
+# Keep screenshots for documentation
+!screenshots/
+!screenshots/*.jpg
+!screenshots/*.png
+
+# System files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Environment
+.env
+*.log

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Detection System - MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Facial Detection System</h1>
+            <p>Upload a photo of a missing person and search through CCTV footage</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Step 1: Upload Target Photo -->
+            <div class="card">
+                <h2>Step 1: Upload Target Photo</h2>
+                <div class="upload-section">
+                    <input type="file" id="targetPhoto" accept="image/*">
+                    <button onclick="uploadTarget()" class="btn btn-primary">Upload Photo</button>
+                </div>
+                <div id="targetStatus" class="status"></div>
+                <div id="targetPreview" class="preview"></div>
+            </div>
+
+            <!-- Step 2: Upload CCTV Video -->
+            <div class="card">
+                <h2>Step 2: Upload CCTV Video</h2>
+                <div class="upload-section">
+                    <input type="file" id="cctvVideo" accept="video/*">
+                    <button onclick="uploadVideo()" class="btn btn-primary">Upload Video</button>
+                </div>
+                <div id="videoStatus" class="status"></div>
+                <div id="videoList" class="video-list"></div>
+            </div>
+
+            <!-- Step 3: Run Detection -->
+            <div class="card">
+                <h2>Step 3: Run Detection</h2>
+                <button onclick="runDetection()" class="btn btn-success" id="detectBtn" disabled>
+                    Start Detection
+                </button>
+                <div id="detectionStatus" class="status"></div>
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Processing video... This may take a few minutes.</p>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="card results-card" id="resultsCard" style="display: none;">
+                <h2>Detection Results</h2>
+                <div id="resultsCount" class="results-count"></div>
+                <div id="resultsGrid" class="results-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
